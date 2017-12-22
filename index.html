@@ -2,16 +2,22 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <title>Agenda for Today</title>
+
+    <!--Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
   </head>
   <body>
-    <div id="1"></div>
-    <div id="2"></div>
+    <div id="1">
+    </div>
+    <div id="2">
+    </div>
     <div id="3"></div>
     <div id="4"></div>
   </body>
   <style>
     body{
+      font-family: 'Shrikhand', cursive;
       padding: 10px; margin:0;
       background: #27272c;
       color: #eaeaea;
@@ -19,8 +25,34 @@
       -webkit-grid-template-rows: auto;
       -webkit-grid-template-columns:
     }
+    div{
+      text-align: center;
+      font-size: 5em;
+    }
   </style>
   <script>
     document.documentElement.webkitRequestFullScreen(); //display in full screen
+
+    //Run the clock on start up
+    getTime();
+
+    //funtion to get the current time
+    function getTime(){
+      var today = new Date();
+      var month = today.getMonth();
+      var date  = today.getDate();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+
+      //Display the date and time in column
+      document.getElementById('1').innerHTML = month + ":" + date;
+      document.getElementById('2').innerHTML = h + ":" + m + ":" + s;
+
+      //Update the time every 500ms
+      t = setTimeout( function(){
+        getTime()
+      },100);
+    }
   </script>
 </html>
