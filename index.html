@@ -1,34 +1,84 @@
+<!DOCTYPE html>
+<html>
 
-<h2>Engineering Unit Conversion</h2>
-<div id="container">
-  <div class="child-container">
-    <h3>Metric to Imperial Units</h3>
-    <div>
-      <label id="metric-imperial-result"></label>
-      <input type='text' placeholder="0.00">
+<head>
+  <meta charset="UTF-8">
+  <title>Engineering Unit Conversion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#124a86">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" href="resources/img/icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <h1>Engineering Unit Conversions</h1>
+    <div id="container">
+      <div class="child-container">
+        <h3>Metric to Imperial Units</h3>
+        <div>
+          <label id="metric-imperial-result"></label>
+          <input type='text' placeholder="0.00">
+          <label id="output" placeholder="0.00"></label>
+        </div>
+      </div>
+
+      <div class="child-container">
+        <h3>Ft to m </h3>
+        <div>
+          <label id="metric-imperial-result"></label>
+          <input type='text' placeholder="0.00">
+        </div>
+      </div>
+
+      <div class="child-container">
+        <h3>Fahrenheit to Celcius</h3>
+        <p>When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
+        <div>
+          <label id="metric-imperial-result"></label>
+          <input type='text' placeholder="0.00">
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <div class="child-container">
-    <h3>Imperial to Metric Units</h3>
-    <div></div>
-  </div>
-</div>
+  <style>
+    body {
+      background: url('resources/img/texture.png'), url('resources/img/graph-paper.svg'), rgb(18, 74, 134);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+    }
 
-<style>
-#container{
-  margin:0; padding: 0;
-  display: grid;
-  grid-gap: 10px;
-  -webkit-display: grid;
-  grid-template-columns: 100px 1fr;
-}
-#container > child-container:nth-child(1){
-  grid-column: 1;
-  grid-row:    1;
-}
-#container > child-container:nth-child(2){
-  grid-row:    1;
-  grid-column: 2;
-}
-</style>
+    h1,
+    h2 {
+      -webkit-text-stroke: 1px #fff;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 700;
+    }
+
+    #wrapper {
+      width: 70%;
+      max-width: 900px;
+      padding: 0;
+      margin: 2em auto;
+    }
+
+    #container {
+      margin: 1em auto;
+      padding: 1em;
+      display: grid;
+      grid-gap: 10px;
+      -webkit-display: grid;
+      grid-template-rows: 100%;
+    }
+  </style>
+
+</body>
+
+</html>
